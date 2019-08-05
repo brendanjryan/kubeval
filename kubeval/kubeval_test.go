@@ -247,33 +247,33 @@ func TestDetermineSchemaForEnvVariable(t *testing.T) {
 }
 
 func TestGetString(t *testing.T) {
-	var tests = []struct{
-		body map[string]interface{}
-		key string
+	var tests = []struct {
+		body        map[string]interface{}
+		key         string
 		expectedVal string
 		expectError bool
 	}{
 		{
-			body: map[string]interface{}{"goodKey": "goodVal"},
-			key: "goodKey",
+			body:        map[string]interface{}{"goodKey": "goodVal"},
+			key:         "goodKey",
 			expectedVal: "goodVal",
 			expectError: false,
 		},
 		{
-			body: map[string]interface{}{},
-			key: "missingKey",
+			body:        map[string]interface{}{},
+			key:         "missingKey",
 			expectedVal: "",
 			expectError: true,
 		},
 		{
-			body: map[string]interface{}{"nilKey": nil},
-			key: "nilKey",
+			body:        map[string]interface{}{"nilKey": nil},
+			key:         "nilKey",
 			expectedVal: "",
 			expectError: true,
 		},
 		{
-			body: map[string]interface{}{"badKey": 5},
-			key: "badKey",
+			body:        map[string]interface{}{"badKey": 5},
+			key:         "badKey",
 			expectedVal: "",
 			expectError: true,
 		},

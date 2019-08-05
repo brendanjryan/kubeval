@@ -106,13 +106,13 @@ func Test_jsonOutputManager_put(t *testing.T) {
 			s := newJSONOutputManager(log.New(buf, "", 0))
 
 			// record results
-			err := s.put(tt.args.vr)
+			err := s.Put(tt.args.vr)
 			if err != nil {
 				assert.Equal(t, tt.expErr, err)
 			}
 
-			// flush final buffer
-			err = s.flush()
+			// Flush final buffer
+			err = s.Flush()
 			if err != nil {
 				assert.Equal(t, tt.expErr, err)
 			}
